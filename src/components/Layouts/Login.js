@@ -5,6 +5,10 @@ import { useState } from "react";
 const Login = (props) => {
   const showModal = props.showModal;
   const [showPassword, setShowPassword] = useState("password");
+  const HandleFormSubmit = (e) => {
+    const email = e.target.email.value;
+    localStorage.setItem("AtgUser", JSON.stringify({ fullname: email }));
+  };
   return (
     <div className="m-auto" style={{ width: "732px" }}>
       <div className="d-flex justify-content-end mb-2">
@@ -29,41 +33,47 @@ const Login = (props) => {
             <div className="col-6">
               <p className="fs-3 fw-bold text-black mt-3 mb-3">Sign In</p>
               <div className="container-fluid">
-                <div className="row">
-                  <input
-                    className="col-12 ps-3 border border-bottom-0 border-secondary"
-                    type="text"
-                    placeholder="Email"
-                  />
-                </div>
-                <div className="row">
-                  <input
-                    className="col-12 ps-3 border border-secondary"
-                    type={`${showPassword}`}
-                    placeholder="Password"
-                  />
-                  {showPassword === "password" ? (
-                    <i
-                      className="bi bi-eye position-absolute cursor-pointer"
-                      style={{ top: "230px", left: "330px" }}
-                      onClick={() => setShowPassword("text")}
-                    ></i>
-                  ) : (
-                    <i
-                      className="bi bi-eye-slash position-absolute cursor-pointer"
-                      style={{ top: "230px", left: "330px" }}
-                      onClick={() => setShowPassword("password")}
-                    ></i>
-                  )}
-                </div>
-                <div className="row">
-                  <button className="col-12 bg-primary rounded-pill border-0 text-light mt-3 mb-3 p-2">Sign In</button>
-                </div>
-                <div className="row">
-                  <button className="col-12 border border-bottom-0 border-secondary p-2">
-                    <img className="pe-2 pb-1" src={fbLogo} alt="Logo" /> Sign In with Facebook
-                  </button>
-                </div>
+                <form onSubmit={(e) => HandleFormSubmit(e)}>
+                  <div className="row">
+                    <input
+                      className="col-12 ps-3 border border-bottom-0 border-secondary"
+                      type="text"
+                      name="email"
+                      placeholder="Email"
+                    />
+                  </div>
+                  <div className="row">
+                    <input
+                      className="col-12 ps-3 border border-secondary"
+                      type={`${showPassword}`}
+                      placeholder="Password"
+                      name="password"
+                    />
+                    {showPassword === "password" ? (
+                      <i
+                        className="bi bi-eye position-absolute cursor-pointer"
+                        style={{ top: "230px", left: "330px" }}
+                        onClick={() => setShowPassword("text")}
+                      ></i>
+                    ) : (
+                      <i
+                        className="bi bi-eye-slash position-absolute cursor-pointer"
+                        style={{ top: "230px", left: "330px" }}
+                        onClick={() => setShowPassword("password")}
+                      ></i>
+                    )}
+                  </div>
+                  <div className="row">
+                    <button className="col-12 bg-primary rounded-pill border-0 text-light mt-3 mb-3 p-2" type="submit">
+                      Sign In
+                    </button>
+                  </div>
+                  <div className="row">
+                    <button className="col-12 border border-bottom-0 border-secondary p-2">
+                      <img className="pe-2 pb-1" src={fbLogo} alt="Logo" /> Sign In with Facebook
+                    </button>
+                  </div>
+                </form>
                 <div className="row">
                   <button className="col-12 border border-secondary p-2 ">
                     <img className="pe-2 pb-1" src={googleLogo} alt="Logo" />

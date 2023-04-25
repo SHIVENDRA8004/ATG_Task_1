@@ -20,7 +20,6 @@ const Register = (props) => {
     const firstname = e.target.firstname.value;
     const lastname = e.target.lastname.value;
     const fullname = firstname + " " + lastname;
-    console.log(fullname);
     localStorage.setItem("AtgUser", JSON.stringify({ fullname: fullname }));
   };
   return (

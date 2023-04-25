@@ -1,5 +1,5 @@
 const Logined = (props) => {
-  const fullname = props.fullname;
+  const fullname = props.name;
   return (
     <div>
       <h1>Logined</h1>
