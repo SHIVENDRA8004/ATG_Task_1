@@ -15,7 +15,7 @@ const PostCard = ({
   postBody,
 }) => {
   return (
-    <div className="border border- mb-2 rounded">
+    <div className="border border- mb-4 rounded">
       {postImage ? (
         <div>
           <img src={postImage} className="w-100" alt="PostImage" />
@@ -24,7 +24,7 @@ const PostCard = ({
         ""
       )}
       <div className="p-4">
-        {postType ? <div className="fw-bold pb-3">{postType}</div> : ""}
+        {postType ? <div className="fw-bold pb-2">{postType}</div> : ""}
         {postTitle ? (
           <div className="d-flex justify-content-between fs-4 fw-bold">
             <div className="w-75">{postTitle}</div>
@@ -35,12 +35,12 @@ const PostCard = ({
         ) : (
           ""
         )}
-        {postBody ? <div className="">{postBody}</div> : ""}
-        <div className="d-flex">
+        {postBody ? <div className="pb-2 pt-2 text-secondary fs-5">{postBody}</div> : ""}
+        <div className="d-flex fw-bold pt-2 pb-2">
           {postDate ? (
-            <div className="d-flex">
+            <div className="d-flex w-25">
               <div>
-                <i class="bi bi-calendar2-week"></i>
+                <i class="bi bi-calendar2-week pe-2"></i>
               </div>
               <div>{postDate}</div>
             </div>
@@ -50,7 +50,7 @@ const PostCard = ({
           {postCompany ? (
             <div className="d-flex">
               <div>
-                <i class="bi bi-briefcase"></i>
+                <i class="bi bi-briefcase pe-2"></i>
               </div>
               <div>{postCompany}</div>
             </div>
@@ -58,9 +58,9 @@ const PostCard = ({
             ""
           )}
           {postLocation ? (
-            <div className="d-flex">
+            <div className="d-flex ps-5 w-25">
               <div>
-                <i class="bi bi-geo-alt"></i>
+                <i class="bi bi-geo-alt pe-2"></i>
               </div>
               <div>{postLocation}</div>
             </div>
@@ -69,25 +69,27 @@ const PostCard = ({
           )}
         </div>
         {postButton ? (
-          <div className="">
-            <button className="w-100">{postButton}</button>
+          <div className="mb-4 mt-2">
+            <button className={`w-100 rounded border border-1 border-secondary bg-light p-2 text-success fw-bold `}>
+              {postButton}
+            </button>
           </div>
         ) : (
           ""
         )}
-        <div className="d-flex justify-content-between">
+        <div className="d-flex justify-content-between mt-2">
           <div className="d-flex align-items-center">
             <div>
-              <img src={postIcon} alt="" />
+              <img className="pe-2" src={postIcon} alt="" />
             </div>
             <div>{postUser}</div>
           </div>
-          <div className="d-flex">
+          <div className="d-flex justify-content-between align-items-center w-25">
             <div className="d-flex">
               <div>
-                <i class="bi bi-eye"></i>
+                <i class="bi bi-eye pe-2"></i>
               </div>
-              <div>{postViews}</div>
+              <div>{postViews} Views</div>
             </div>
             <div>
               <i class="bi bi-share-fill"></i>
