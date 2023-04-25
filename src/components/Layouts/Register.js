@@ -1,8 +1,10 @@
 import fbLogo from "../../assets/fbLogo.svg";
 import googleLogo from "../../assets/googleLogo.svg";
 import illustration from "../../assets/atg_illustration.svg";
+import { useState } from "react";
 const Register = (props) => {
   const showModal = props.showModal;
+  const [showPassword, setShowPassword] = useState("password");
   return (
     <div
       className="bg-transparent position-absolute start-50 top-50 translate-middle w-50"
@@ -52,9 +54,22 @@ const Register = (props) => {
                 <div className="row">
                   <input
                     className="col-12 ps-3 border border-bottom-0 border-secondary"
-                    type="password"
+                    type={`${showPassword}`}
                     placeholder="Password"
                   />
+                  {showPassword === "password" ? (
+                    <i
+                      class="bi bi-eye position-absolute cursor-pointer"
+                      style={{ top: "265px", left: "330px" }}
+                      onClick={() => setShowPassword("text")}
+                    ></i>
+                  ) : (
+                    <i
+                      class="bi bi-eye-slash position-absolute cursor-pointer"
+                      style={{ top: "265px", left: "330px" }}
+                      onClick={() => setShowPassword("password")}
+                    ></i>
+                  )}
                 </div>
                 <div className="row">
                   <input
