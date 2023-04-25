@@ -9,7 +9,7 @@ const Login = (props) => {
     <div className="m-auto" style={{ width: "732px" }}>
       <div className="d-flex justify-content-end mb-2">
         <i
-          class="bi bi-x-circle-fill cursor-pointer"
+          className="bi bi-x-circle-fill cursor-pointer"
           onClick={() => {
             props.HandleRegisterClick(showModal);
           }}
@@ -44,14 +44,14 @@ const Login = (props) => {
                   />
                   {showPassword === "password" ? (
                     <i
-                      class="bi bi-eye position-absolute cursor-pointer"
-                      style={{ top: "225px", left: "300px" }}
+                      className="bi bi-eye position-absolute cursor-pointer"
+                      style={{ top: "230px", left: "330px" }}
                       onClick={() => setShowPassword("text")}
                     ></i>
                   ) : (
                     <i
-                      class="bi bi-eye-slash position-absolute cursor-pointer"
-                      style={{ top: "265px", left: "330px" }}
+                      className="bi bi-eye-slash position-absolute cursor-pointer"
+                      style={{ top: "230px", left: "330px" }}
                       onClick={() => setShowPassword("password")}
                     ></i>
                   )}
@@ -71,7 +71,9 @@ const Login = (props) => {
                   </button>
                 </div>
                 <div className="row">
-                  <p className="text-center mt-3">Forgot Password?</p>
+                  <p className="text-center mt-3" style={{ fontSize: "12px", fontWeight: "500" }}>
+                    Forgot Password?
+                  </p>
                 </div>
               </div>
             </div>

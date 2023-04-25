@@ -27,7 +27,7 @@ const Navbar = () => {
             Create account.
             <span className="text-primary fw-bold cursor-pointer" onClick={() => setShowModal(!showModal)}>
               It's free!
-              <i class="bi bi-caret-down-fill ps-1 text-dark "></i>
+              <i className="bi bi-caret-down-fill ps-1 text-dark "></i>
             </span>
           </div>
         </div>
