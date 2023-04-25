@@ -33,7 +33,7 @@ const Register = (props) => {
             }}
           ></i>
         </div>
-        <div className="bg-light rounded ps-4 pe-4 pb-2 shadow">
+        <div className="bg-light rounded ps-4 pe-4 pb-2 blur">
           <div
             className="text-center "
             style={{ backgroundColor: "#EFFFF4", borderRadius: "8px 8px 0 0", padding: "25px 0" }}
