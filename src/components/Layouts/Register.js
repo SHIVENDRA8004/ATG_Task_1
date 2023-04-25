@@ -98,15 +98,22 @@ const Register = (props) => {
             </div>
             <div className=" container-fluid col-6">
               <div className="row text-end">
-                <p className="col-12">
+                <p className="col-12 mt-4" style={{ fontSize: "14px" }}>
                   Already have an account?<span className="text-primary fw-bold cursor-pointer">Sign In</span>
                 </p>
               </div>
-              <div className="row">
-                <img className="col-12" src={illustration} alt="Illustration" />
+              <div className="row ">
+                <img
+                  className="ms-auto me-auto"
+                  style={{ height: "320px", width: "320px" }}
+                  src={illustration}
+                  alt="Illustration"
+                />
               </div>
-              <div className="row">
-                <p className="col-12">By signing up, you agree to our Terms & conditions, Privacy policy</p>
+              <div className="row ">
+                <p className="col-12 text-center" style={{ fontSize: "11px" }}>
+                  By signing up, you agree to our Terms & conditions, Privacy policy
+                </p>
               </div>
             </div>
           </div>
