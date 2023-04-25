@@ -2,7 +2,6 @@ import { useState } from "react";
 import { posts } from "../constants/constants";
 // Creating a Postcard for each post
 const PostCard = ({
-  index,
   postImage,
   postType,
   postTitle,
@@ -16,81 +15,83 @@ const PostCard = ({
   postBody,
 }) => {
   return (
-    <div className="border border-secondary mb-2">
+    <div className="border border- mb-2 rounded">
       {postImage ? (
         <div>
-          <img src={postImage} alt="PostImage" />
+          <img src={postImage} className="w-100" alt="PostImage" />
         </div>
       ) : (
         ""
       )}
-      {postType ? <div className="fw-bold">{postType}</div> : ""}
-      {postTitle ? (
+      <div className="p-4">
+        {postType ? <div className="fw-bold pb-3">{postType}</div> : ""}
+        {postTitle ? (
+          <div className="d-flex justify-content-between fs-4 fw-bold">
+            <div className="w-75">{postTitle}</div>
+            <div>
+              <i class="bi bi-three-dots"></i>
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
+        {postBody ? <div className="">{postBody}</div> : ""}
         <div className="d-flex">
-          <div>{postTitle}</div>
-          <div>
-            <i class="bi bi-three-dots"></i>
-          </div>
-        </div>
-      ) : (
-        ""
-      )}
-      {postBody ? <div>{postBody}</div> : ""}
-      <div className="d-flex">
-        {postDate ? (
-          <div className="d-flex">
-            <div>
-              <i class="bi bi-calendar2-week"></i>
+          {postDate ? (
+            <div className="d-flex">
+              <div>
+                <i class="bi bi-calendar2-week"></i>
+              </div>
+              <div>{postDate}</div>
             </div>
-            <div>{postDate}</div>
+          ) : (
+            ""
+          )}
+          {postCompany ? (
+            <div className="d-flex">
+              <div>
+                <i class="bi bi-briefcase"></i>
+              </div>
+              <div>{postCompany}</div>
+            </div>
+          ) : (
+            ""
+          )}
+          {postLocation ? (
+            <div className="d-flex">
+              <div>
+                <i class="bi bi-geo-alt"></i>
+              </div>
+              <div>{postLocation}</div>
+            </div>
+          ) : (
+            ""
+          )}
+        </div>
+        {postButton ? (
+          <div className="">
+            <button className="w-100">{postButton}</button>
           </div>
         ) : (
           ""
         )}
-        {postCompany ? (
-          <div className="d-flex">
+        <div className="d-flex justify-content-between">
+          <div className="d-flex align-items-center">
             <div>
-              <i class="bi bi-briefcase"></i>
+              <img src={postIcon} alt="" />
             </div>
-            <div>{postCompany}</div>
+            <div>{postUser}</div>
           </div>
-        ) : (
-          ""
-        )}
-        {postLocation ? (
           <div className="d-flex">
-            <div>
-              <i class="bi bi-geo-alt"></i>
+            <div className="d-flex">
+              <div>
+                <i class="bi bi-eye"></i>
+              </div>
+              <div>{postViews}</div>
             </div>
-            <div>{postLocation}</div>
-          </div>
-        ) : (
-          ""
-        )}
-      </div>
-      {postButton ? (
-        <div className="">
-          <button className="w-100">{postButton}</button>
-        </div>
-      ) : (
-        ""
-      )}
-      <div className="d-flex justify-content-between">
-        <div className="d-flex align-items-center">
-          <div>
-            <img src={postIcon} alt="" />
-          </div>
-          <div>{postUser}</div>
-        </div>
-        <div className="d-flex">
-          <div className="d-flex">
             <div>
-              <i class="bi bi-eye"></i>
+              <i class="bi bi-share-fill"></i>
             </div>
-            <div>{postViews}</div>
-          </div>
-          <div>
-            <i class="bi bi-share-fill"></i>
           </div>
         </div>
       </div>
@@ -174,10 +175,10 @@ const PostFeed = () => {
           </div>
         </div>
       </div>
-      <div className="row">
+      <div className="row mt-4">
         <div className="col-8 p-0">
-          {posts.map((post, index) => (
-            <PostCard key={post.postTitle} index={index} {...post} />
+          {posts.map((post) => (
+            <PostCard key={post.postTitle} {...post} />
           ))}
         </div>
       </div>
