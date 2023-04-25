@@ -6,7 +6,7 @@ const Login = (props) => {
   const showModal = props.showModal;
   const [showPassword, setShowPassword] = useState("password");
   return (
-    <div>
+    <div className="m-auto" style={{ width: "732px" }}>
       <div className="d-flex justify-content-end mb-2">
         <i
           class="bi bi-x-circle-fill cursor-pointer"
