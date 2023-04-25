@@ -1,4 +1,102 @@
 import { useState } from "react";
+import { posts } from "../constants/constants";
+// Creating a Postcard for each post
+const PostCard = ({
+  index,
+  postImage,
+  postType,
+  postTitle,
+  postDate,
+  postLocation,
+  postUser,
+  postIcon,
+  postViews,
+  postCompany,
+  postButton,
+  postBody,
+}) => {
+  return (
+    <div className="border border-secondary mb-2">
+      {postImage ? (
+        <div>
+          <img src={postImage} alt="PostImage" />
+        </div>
+      ) : (
+        ""
+      )}
+      {postType ? <div className="fw-bold">{postType}</div> : ""}
+      {postTitle ? (
+        <div className="d-flex">
+          <div>{postTitle}</div>
+          <div>
+            <i class="bi bi-three-dots"></i>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
+      {postBody ? <div>{postBody}</div> : ""}
+      <div className="d-flex">
+        {postDate ? (
+          <div className="d-flex">
+            <div>
+              <i class="bi bi-calendar2-week"></i>
+            </div>
+            <div>{postDate}</div>
+          </div>
+        ) : (
+          ""
+        )}
+        {postCompany ? (
+          <div className="d-flex">
+            <div>
+              <i class="bi bi-briefcase"></i>
+            </div>
+            <div>{postCompany}</div>
+          </div>
+        ) : (
+          ""
+        )}
+        {postLocation ? (
+          <div className="d-flex">
+            <div>
+              <i class="bi bi-geo-alt"></i>
+            </div>
+            <div>{postLocation}</div>
+          </div>
+        ) : (
+          ""
+        )}
+      </div>
+      {postButton ? (
+        <div className="">
+          <button className="w-100">{postButton}</button>
+        </div>
+      ) : (
+        ""
+      )}
+      <div className="d-flex justify-content-between">
+        <div className="d-flex align-items-center">
+          <div>
+            <img src={postIcon} alt="" />
+          </div>
+          <div>{postUser}</div>
+        </div>
+        <div className="d-flex">
+          <div className="d-flex">
+            <div>
+              <i class="bi bi-eye"></i>
+            </div>
+            <div>{postViews}</div>
+          </div>
+          <div>
+            <i class="bi bi-share-fill"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const PostFeed = () => {
   const [spanClass, setSpanClass] = useState([" text-dark border border-dark", "", "", "", ""]);
@@ -76,8 +174,12 @@ const PostFeed = () => {
           </div>
         </div>
       </div>
-      <div className="row" style={{ height: "100vh" }}>
-        Posts
+      <div className="row">
+        <div className="col-8 p-0">
+          {posts.map((post, index) => (
+            <PostCard key={post.postTitle} index={index} {...post} />
+          ))}
+        </div>
       </div>
     </div>
   );
