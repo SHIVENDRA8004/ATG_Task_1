@@ -1,5 +1,6 @@
 import fbLogo from "../../assets/fbLogo.svg";
 import googleLogo from "../../assets/googleLogo.svg";
+import illustration from "../../assets/atg_illustration.svg";
 const Register = (props) => {
   const showModal = props.showModal;
   return (
@@ -69,18 +70,30 @@ const Register = (props) => {
                 </div>
                 <div className="row">
                   <button className="col-12 border border-bottom-0 border-secondary p-2">
-                    <img className="pe-3 pb-1" src={fbLogo} alt="Logo" /> Sign up with Facebook
+                    <img className="pe-2 pb-1" src={fbLogo} alt="Logo" /> Sign up with Facebook
                   </button>
                 </div>
                 <div className="row">
                   <button className="col-12 border border-secondary p-2 ">
-                    <img className="pe-3 pb-1" src={googleLogo} alt="Logo" />
+                    <img className="pe-2 pb-1" src={googleLogo} alt="Logo" />
                     Sign up with Google
                   </button>
                 </div>
               </div>
             </div>
-            <div className="col-6"></div>
+            <div className=" container-fluid col-6">
+              <div className="row text-end">
+                <p className="col-12">
+                  Already have an account?<span className="text-primary fw-bold cursor-pointer">Sign In</span>
+                </p>
+              </div>
+              <div className="row">
+                <img className="col-12" src={illustration} alt="Illustration" />
+              </div>
+              <div className="row">
+                <p className="col-12">By signing up, you agree to our Terms & conditions, Privacy policy</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
