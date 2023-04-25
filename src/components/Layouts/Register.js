@@ -23,20 +23,17 @@ const Register = (props) => {
     localStorage.setItem("AtgUser", JSON.stringify({ fullname: fullname }));
   };
   return (
-    <div
-      className="bg-transparent position-absolute start-50 top-50 translate-middle w-50"
-      style={{ borderRadius: "8px" }}
-    >
-      <div className={`${registerClass}`}>
+    <div className="position-absolute start-50 top-50 translate-middle w-50 " style={{ borderRadius: "8px" }}>
+      <div className={`${registerClass} `}>
         <div className="d-flex justify-content-end mb-2">
           <i
-            className="bi bi-x-circle-fill cursor-pointer"
+            className="bi bi-x-circle-fill text-light cursor-pointer"
             onClick={() => {
               props.HandleRegisterClick(showModal);
             }}
           ></i>
         </div>
-        <div>
+        <div className="bg-light rounded ps-4 pe-4 pb-2 blur">
           <div
             className="text-center "
             style={{ backgroundColor: "#EFFFF4", borderRadius: "8px 8px 0 0", padding: "25px 0" }}

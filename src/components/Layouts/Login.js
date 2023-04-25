@@ -13,13 +13,13 @@ const Login = (props) => {
     <div className="m-auto" style={{ width: "732px" }}>
       <div className="d-flex justify-content-end mb-2">
         <i
-          className="bi bi-x-circle-fill cursor-pointer"
+          className="bi bi-x-circle-fill cursor-pointer text-light"
           onClick={() => {
             props.HandleRegisterClick(showModal);
           }}
         ></i>
       </div>
-      <div>
+      <div className="bg-light rounded ps-4 pe-4 pb-2 blur">
         <div
           className="text-center "
           style={{ backgroundColor: "#EFFFF4", borderRadius: "8px 8px 0 0", padding: "25px 0" }}
@@ -28,7 +28,7 @@ const Login = (props) => {
             Let's learn, share & inspire each other with our passion for computer engineering. Sign up now 🤘🏼
           </p>
         </div>
-        <div className="container-fluid">
+        <div className="container-fluid bg-light">
           <div className="row">
             <div className="col-6">
               <p className="fs-3 fw-bold text-black mt-3 mb-3">Sign In</p>
@@ -52,13 +52,13 @@ const Login = (props) => {
                     {showPassword === "password" ? (
                       <i
                         className="bi bi-eye position-absolute cursor-pointer"
-                        style={{ top: "230px", left: "330px" }}
+                        style={{ top: "255px", left: "330px" }}
                         onClick={() => setShowPassword("text")}
                       ></i>
                     ) : (
                       <i
                         className="bi bi-eye-slash position-absolute cursor-pointer"
-                        style={{ top: "230px", left: "330px" }}
+                        style={{ top: "255px", left: "330px" }}
                         onClick={() => setShowPassword("password")}
                       ></i>
                     )}
