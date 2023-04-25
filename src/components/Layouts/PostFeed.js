@@ -29,7 +29,7 @@ const PostCard = ({
           <div className="d-flex justify-content-between fs-4 fw-bold">
             <div className="w-75">{postTitle}</div>
             <div>
-              <i class="bi bi-three-dots"></i>
+              <i className="bi bi-three-dots cursor-pointer"></i>
             </div>
           </div>
         ) : (
@@ -82,7 +82,7 @@ const PostCard = ({
             <div>
               <img className="pe-2" src={postIcon} alt="" />
             </div>
-            <div>{postUser}</div>
+            <div className="fw-bold">{postUser}</div>
           </div>
           <div className="d-flex justify-content-between align-items-center w-25">
             <div className="d-flex">
@@ -92,7 +92,7 @@ const PostCard = ({
               <div>{postViews} Views</div>
             </div>
             <div>
-              <i class="bi bi-share-fill"></i>
+              <i class="bi bi-share-fill p-1 ps-2 pe-2 rounded " style={{ backgroundColor: "#EDEEF0" }}></i>
             </div>
           </div>
         </div>
@@ -182,6 +182,29 @@ const PostFeed = () => {
           {posts.map((post) => (
             <PostCard key={post.postTitle} {...post} />
           ))}
+        </div>
+        <div className="col-4 p-0 d-flex justify-content-center h-25">
+          <div className=" h-25">
+            <div className="d-flex justify-content-between w-75 m-4 ms-auto me-0 border border-end-0 border-top-0 border-start-0 border-secondary-1">
+              <div className="d-flex ">
+                <div>
+                  <i class="bi bi-geo-alt pe-2"></i>
+                </div>
+                <div>Noida,India</div>
+              </div>
+              <div>
+                <i class="bi bi-pencil-fill"></i>
+              </div>
+            </div>
+            <div className="d-flex w-75 ms-auto " style={{ fontSize: "12px" }}>
+              <div>
+                <i class="bi bi-exclamation-circle "></i>
+              </div>
+              <div className="text-center">
+                Your location will help us serve better and extend a personalised experience.
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
