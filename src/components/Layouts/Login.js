@@ -10,7 +10,7 @@ const Login = (props) => {
     localStorage.setItem("AtgUser", JSON.stringify({ fullname: email }));
   };
   return (
-    <div className="m-auto" style={{ width: "732px" }}>
+    <div className="m-auto ">
       <div className="d-flex justify-content-end mb-2">
         <i
           className="bi bi-x-circle-fill cursor-pointer text-light"
@@ -19,7 +19,7 @@ const Login = (props) => {
           }}
         ></i>
       </div>
-      <div className="bg-light rounded ps-4 pe-4 pb-2 blur">
+      <div className="bg-light rounded ps-4 pe-4  shadow">
         <div
           className="text-center "
           style={{ backgroundColor: "#EFFFF4", borderRadius: "8px 8px 0 0", padding: "25px 0" }}
@@ -81,7 +81,7 @@ const Login = (props) => {
                   </button>
                 </div>
                 <div className="row">
-                  <p className="text-center mt-3" style={{ fontSize: "12px", fontWeight: "500" }}>
+                  <p className="text-center mt-3 fw-bold" style={{ fontSize: "12px" }}>
                     Forgot Password?
                   </p>
                 </div>

@@ -39,6 +39,6 @@ input[type="password"]:focus {
 input[type="password"] {
   height: 42px;
 }
-.blur {
-  box-shadow: rgba(0, 0, 0, 0.6) 0px 22px 70px 4px;
+.shadow {
+  box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 0px 600px;
 }
