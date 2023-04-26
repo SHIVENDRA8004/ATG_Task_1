@@ -190,7 +190,7 @@ const PostFeed = () => {
                 <div>
                   <i class="bi bi-geo-alt pe-2"></i>
                 </div>
-                <div>Noida,India</div>
+                <input className="border border-0 focus" type="location" placeholder="Noida,India" />
               </div>
               <div>
                 <i class="bi bi-pencil-fill"></i>
@@ -198,9 +198,9 @@ const PostFeed = () => {
             </div>
             <div className="d-flex w-75 ms-auto " style={{ fontSize: "12px" }}>
               <div>
-                <i class="bi bi-exclamation-circle "></i>
+                <i class="bi bi-exclamation-circle pe-2"></i>
               </div>
-              <div className="text-center">
+              <div className="text-center ">
                 Your location will help us serve better and extend a personalised experience.
               </div>
             </div>

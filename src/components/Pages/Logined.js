@@ -1,9 +1,14 @@
+import Navbar from "../Layouts/Navbar";
+import PostFeed from "../Layouts/PostFeed";
 const Logined = (props) => {
-  const fullname = props.name;
   return (
-    <div>
-      <h1>Logined</h1>
-      <p>{fullname}</p>
+    <div className="container-fluid">
+      <div className="row">
+        <Navbar />
+      </div>
+      <div className="row">
+        <PostFeed />
+      </div>
     </div>
   );
 };

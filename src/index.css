@@ -50,3 +50,6 @@ input[type="password"] {
 .blur {
   box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 0px 600px;
 }
+.focus:focus {
+  outline: none;
+}

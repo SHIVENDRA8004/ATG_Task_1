@@ -23,7 +23,10 @@ const Register = (props) => {
     localStorage.setItem("AtgUser", JSON.stringify({ fullname: fullname }));
   };
   return (
-    <div className="position-absolute start-50 top-50 translate-middle w-50 " style={{ borderRadius: "8px" }}>
+    <div
+      className="position-absolute start-50 top-50 translate-middle w-50  "
+      style={{ borderRadius: "8px", zIndex: "1" }}
+    >
       <div className={`${registerClass} `}>
         <div className="d-flex justify-content-end mb-2">
           <i

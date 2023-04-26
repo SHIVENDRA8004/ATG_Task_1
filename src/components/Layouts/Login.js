@@ -52,13 +52,13 @@ const Login = (props) => {
                     {showPassword === "password" ? (
                       <i
                         className="bi bi-eye position-absolute cursor-pointer"
-                        style={{ top: "255px", left: "330px" }}
+                        style={{ top: "230px", left: "330px" }}
                         onClick={() => setShowPassword("text")}
                       ></i>
                     ) : (
                       <i
                         className="bi bi-eye-slash position-absolute cursor-pointer"
-                        style={{ top: "255px", left: "330px" }}
+                        style={{ top: "230px", left: "330px" }}
                         onClick={() => setShowPassword("password")}
                       ></i>
                     )}
