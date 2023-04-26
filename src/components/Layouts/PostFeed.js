@@ -122,6 +122,7 @@ const GroupCard = ({ groupIcon, groupName, groupStatus }) => {
 };
 
 const PostFeed = () => {
+  const user = JSON.parse(localStorage.getItem("AtgUser"));
   const [joinGroup, setJoinGroup] = useState(false);
   const [spanClass, setSpanClass] = useState([" text-dark border border-dark", "", "", "", ""]);
   const HandleSpanClicK = (a) => {
@@ -239,19 +240,23 @@ const PostFeed = () => {
                 Your location will help us serve better and extend a personalised experience.
               </div>
             </div>
-            <div>
-              <div className="d-flex fw-bold w-75 ms-auto pt-4">
-                <div>
-                  <i class="bi bi-hand-thumbs-up pe-2"></i>
+            {user ? (
+              <div>
+                <div className="d-flex fw-bold w-75 ms-auto pt-4">
+                  <div>
+                    <i class="bi bi-hand-thumbs-up pe-2"></i>
+                  </div>
+                  <div>RECOMMENDED GROUPS</div>
                 </div>
-                <div>RECOMMENDED GROUPS</div>
+                <div className=" w-75 ms-auto ">
+                  {groups.map((group) => (
+                    <GroupCard key={group.groupName} {...group} />
+                  ))}
+                </div>
               </div>
-              <div className=" w-75 ms-auto ">
-                {groups.map((group) => (
-                  <GroupCard key={group.groupName} {...group} />
-                ))}
-              </div>
-            </div>
+            ) : (
+              ""
+            )}
           </div>
         </div>
       </div>
