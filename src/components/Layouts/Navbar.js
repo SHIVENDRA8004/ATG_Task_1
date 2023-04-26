@@ -26,7 +26,7 @@ const Navbar = () => {
         </div>
         <div className="col-4">
           {user ? (
-            <div className=" d-flex align-items-center justify-content-center cursor-pointer">
+            <div className=" d-flex align-items-center justify-content-center me-4 pe-4 cursor-pointer">
               <div className="pe-2">
                 <img src={pp_1} alt="Profile" />
               </div>

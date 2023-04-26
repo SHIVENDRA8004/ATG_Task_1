@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { posts } from "../constants/constants";
+import { posts, groups } from "../constants/constants";
 // Creating a Postcard for each post
 const PostCard = ({
   postImage,
@@ -100,6 +100,20 @@ const PostCard = ({
     </div>
   );
 };
+// Created a GroupCard for each group
+const GroupCard = ({ groupIcon, groupName, groupStatus }) => {
+  return (
+    <div className="d-flex align-items-center justify-content-between pt-4">
+      <div className="d-flex align-items-center">
+        <div className="pe-2">
+          <img src={groupIcon} alt="Group1" />
+        </div>
+        <div style={{ fontWeight: "500", fontSize: "14px" }}>{groupName}</div>
+      </div>
+      <button>{groupStatus}</button>
+    </div>
+  );
+};
 
 const PostFeed = () => {
   const [spanClass, setSpanClass] = useState([" text-dark border border-dark", "", "", "", ""]);
@@ -196,12 +210,25 @@ const PostFeed = () => {
                 <i class="bi bi-pencil-fill"></i>
               </div>
             </div>
-            <div className="d-flex w-75 ms-auto " style={{ fontSize: "12px" }}>
+            <div className="d-flex w-75 ms-auto pt-2 pb-2" style={{ fontSize: "12px" }}>
               <div>
                 <i class="bi bi-exclamation-circle pe-2"></i>
               </div>
               <div className="text-center ">
                 Your location will help us serve better and extend a personalised experience.
+              </div>
+            </div>
+            <div>
+              <div className="d-flex fw-bold w-75 ms-auto pt-4">
+                <div>
+                  <i class="bi bi-hand-thumbs-up pe-2"></i>
+                </div>
+                <div>RECOMMENDED GROUPS</div>
+              </div>
+              <div className=" w-75 ms-auto ">
+                {groups.map((group) => (
+                  <GroupCard key={group.groupName} {...group} />
+                ))}
               </div>
             </div>
           </div>

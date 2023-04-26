@@ -59,4 +59,28 @@ const posts = [
     postButton: "Apply on Timesjobs",
   },
 ];
-export { posts };
+
+const groups = [
+  {
+    groupIcon: icon1,
+    groupName: "Leisure",
+    groupStatus: "Followed",
+  },
+  {
+    groupIcon: icon2,
+    groupName: "Activism",
+    groupStatus: "Follow",
+  },
+  {
+    groupIcon: icon3,
+    groupName: "MBA",
+    groupStatus: "Follow",
+  },
+  {
+    groupIcon: icon4,
+    groupName: "Philosophy",
+    groupStatus: "Follow",
+  },
+];
+
+export { posts, groups };
