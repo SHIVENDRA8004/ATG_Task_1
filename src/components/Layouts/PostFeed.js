@@ -110,12 +110,19 @@ const GroupCard = ({ groupIcon, groupName, groupStatus }) => {
         </div>
         <div style={{ fontWeight: "500", fontSize: "14px" }}>{groupName}</div>
       </div>
-      <button>{groupStatus}</button>
+      {groupStatus === "Followed" ? (
+        <button className="rounded-pill border-0 p-1 ps-3 pe-3 bg-dark text-light">{groupStatus}</button>
+      ) : (
+        <button className="rounded-pill border-0 p-1 ps-3 pe-3 " style={{ backgroundColor: "#EDEEF0" }}>
+          {groupStatus}
+        </button>
+      )}
     </div>
   );
 };
 
 const PostFeed = () => {
+  const [joinGroup, setJoinGroup] = useState(false);
   const [spanClass, setSpanClass] = useState([" text-dark border border-dark", "", "", "", ""]);
   const HandleSpanClicK = (a) => {
     if (a === 0) {
@@ -180,14 +187,28 @@ const PostFeed = () => {
         <div className="col-4 p-0 d-flex align-items-center justify-content-end">
           <div>
             <button
-              className="rounded border border-0 p-2 me-2"
+              className="rounded border border-1 p-2 me-2"
               style={{ backgroundColor: "#EDEEF0", fontWeight: "500" }}
             >
               Write a Post <i className="bi bi-caret-down-fill"></i>
             </button>
-            <button className="rounded border border-0 p-2 text-light ms-2" style={{ backgroundColor: "#2F6CE5" }}>
-              <i className="bi bi-people-fill"></i> Join Group
-            </button>
+            {joinGroup ? (
+              <button
+                className="rounded border border-1 p-2 text-secondary ms-2 "
+                style={{ backgroundColor: "#EDEEF0", fontWeight: "500" }}
+                onClick={() => setJoinGroup(false)}
+              >
+                <i class="bi bi-box-arrow-in-right pe-1 "></i> Leave Group
+              </button>
+            ) : (
+              <button
+                className="rounded border border-0 p-2 text-light ms-2"
+                style={{ backgroundColor: "#2F6CE5", fontWeight: "500" }}
+                onClick={() => setJoinGroup(true)}
+              >
+                <i className="bi bi-people-fill pe-1"></i> Join Group
+              </button>
+            )}
           </div>
         </div>
       </div>
